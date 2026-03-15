@@ -1,0 +1,9 @@
+pyserial~=3.5
+psutil~=7.0
+Pillow>=11.0
+numpy>=2.0
+fastapi~=0.115
+uvicorn[standard]~=0.34
+pystray~=0.19
+pyyaml~=6.0
+websockets~=14.0

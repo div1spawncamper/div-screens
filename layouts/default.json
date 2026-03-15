@@ -1,0 +1,131 @@
+{
+  "name": "System Monitor",
+  "screen": {
+    "width": 320,
+    "height": 480,
+    "orientation": "portrait"
+  },
+  "background": {
+    "color": [15, 15, 25]
+  },
+  "widgets": [
+    {
+      "id": "header-clock",
+      "type": "clock",
+      "x": 0, "y": 0, "w": 320, "h": 28,
+      "config": {
+        "format": "%a %d %b %Y - %H:%M:%S",
+        "locale": "es",
+        "font": "JetBrainsMono-Medium",
+        "fontSize": 15,
+        "color": [0, 200, 255],
+        "background": [30, 30, 50],
+        "align": "center"
+      }
+    },
+    {
+      "id": "sep-1",
+      "type": "separator",
+      "x": 12, "y": 29, "w": 296, "h": 1,
+      "config": { "color": [60, 60, 80] }
+    },
+    {
+      "id": "cpu-label",
+      "type": "text",
+      "x": 12, "y": 32, "w": 40, "h": 18,
+      "config": {
+        "text": "CPU",
+        "font": "JetBrainsMono-Bold",
+        "fontSize": 15,
+        "color": [0, 200, 255]
+      }
+    },
+    {
+      "id": "cpu-percent",
+      "type": "text",
+      "x": 52, "y": 34, "w": 50, "h": 16,
+      "config": {
+        "source": "cpu.percent",
+        "font": "JetBrainsMono-Bold",
+        "fontSize": 15,
+        "color": [0, 230, 100]
+      }
+    },
+    {
+      "id": "cpu-freq",
+      "type": "text",
+      "x": 200, "y": 34, "w": 108, "h": 16,
+      "config": {
+        "source": "cpu.frequency",
+        "font": "JetBrainsMono-Regular",
+        "fontSize": 12,
+        "color": [100, 100, 120],
+        "align": "right"
+      }
+    },
+    {
+      "id": "cpu-bar",
+      "type": "bar",
+      "x": 12, "y": 54, "w": 296, "h": 10,
+      "config": {
+        "source": "cpu.percent",
+        "colorLow": [0, 230, 100],
+        "colorMid": [255, 200, 0],
+        "colorHigh": [255, 60, 60],
+        "thresholds": [50, 80],
+        "radius": 3
+      }
+    },
+    {
+      "id": "cpu-cores",
+      "type": "mini_bars",
+      "x": 12, "y": 68, "w": 296, "h": 28,
+      "config": {
+        "source": "cpu.percent_per_core",
+        "columns": 8,
+        "gap": 3,
+        "barHeight": 8,
+        "colorLow": [0, 230, 100],
+        "colorMid": [255, 200, 0],
+        "colorHigh": [255, 60, 60],
+        "thresholds": [50, 80]
+      }
+    },
+    {
+      "id": "sep-2",
+      "type": "separator",
+      "x": 12, "y": 99, "w": 296, "h": 1,
+      "config": { "color": [60, 60, 80] }
+    },
+    {
+      "id": "ram-label",
+      "type": "text",
+      "x": 12, "y": 104, "w": 40, "h": 18,
+      "config": {
+        "text": "RAM",
+        "font": "JetBrainsMono-Bold",
+        "fontSize": 15,
+        "color": [0, 200, 255]
+      }
+    },
+    {
+      "id": "ram-bar",
+      "type": "bar",
+      "x": 12, "y": 126, "w": 296, "h": 10,
+      "config": {
+        "source": "ram.percent",
+        "colorLow": [0, 230, 100],
+        "colorMid": [255, 200, 0],
+        "colorHigh": [255, 60, 60],
+        "thresholds": [50, 80],
+        "radius": 3
+      }
+    },
+    {
+      "id": "sep-3",
+      "type": "separator",
+      "x": 12, "y": 140, "w": 296, "h": 1,
+      "config": { "color": [60, 60, 80] }
+    }
+  ]
+}
